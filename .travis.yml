@@ -16,6 +16,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/lightsoft
+  local_dir: dist/angularDoc
   on:
     branch: master
