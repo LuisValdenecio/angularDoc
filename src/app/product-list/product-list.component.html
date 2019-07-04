@@ -19,6 +19,10 @@
     share product
   </button>
 
+  <app-product-alerts
+    [product]="eachProduct" (notify)="onNotify()">
+  </app-product-alerts>
+
 </div>
 
 
