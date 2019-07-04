@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductListComponent } from './product-list.component';
+import { ProductModel } from '../models/productModel';
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
@@ -22,4 +23,12 @@ describe('ProductListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('it should display a message when a product is shared', () => {
+    spyOn(window, 'alert');
+    const productExample: ProductModel = {name : 'Samsung s10', price : '600$', description : 'awesome'};
+    component.shareProduct(productExample);
+    expect(window.alert).toHaveBeenCalledWith(`${productExample.name} has been shared`);
+  });
+
 });

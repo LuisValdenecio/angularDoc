@@ -1,3 +1,24 @@
 <p>
   product-list works!
 </p>
+
+
+<div *ngFor="let eachProduct of products">
+  <h3>
+    <a [title]="eachProduct.description">
+      {{eachProduct.name}}
+    </a>
+  </h3>
+
+
+  <p *ngIf="eachProduct.description">
+    Description: {{eachProduct.description}}
+  </p>
+
+  <button (click)="shareProduct(eachProduct)">
+    share product
+  </button>
+
+</div>
+
+
